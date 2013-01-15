@@ -1,0 +1,29 @@
+$backgroundColor: #f0b310;
+$linkColor: #0099ff;
+.web-standards{
+    li{
+        float:left;
+        list-style-type: none;
+        padding: 20px;
+        margin: 10px;
+        background: $linkColor;
+        color: #ddd;   
+    }
+    li:hover{
+        background: $backgroundColor;
+        color: #333;  
+    }
+    li:nth-child(4){
+        clear:both;
+    };
+}
+.left-align{text-align:left}
+.right-align{ text-align:right}
+.left{float:left}
+.right{float:right}
+.clear{clear:both}
+.blue{color:$linkColor;}
+.green{color:#92BB44}
+.yellow{color:$backgroundColor;}
+.pink{color:#F05B62}
+.red{color:#8B0036}

@@ -1,0 +1,518 @@
+!!!
+%html
+  %head
+    %title Class 1 -- LIS 654
+    %meta{:name => "description", :content => "Class 1 -- Introduction" } 
+    %meta{:name => "author", :content => "Izzy Johnston" } 
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes" } 
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}
+    
+    %link{:rel => "stylesheet", :href => "reveal/css/reveal.css"}
+    %link{:rel => "stylesheet", :href => "reveal/css/theme/default.css", :id => "theme"}
+    
+    /For syntax highlighting
+    /light editor<link rel="stylesheet" href="lib/css/light.css">
+    %link{:rel=>"stylesheet", :href=>"reveal/lib/css/dark.css"}
+    
+    %link{:rel=> 'stylesheet', :href => 'css/style.css'}
+    
+    /[if lt IE 9]
+      %script{:src=>'lib/js/html5shiv.js'}
+  %body
+    .reveal
+      .slides
+        /Header
+        %section
+          %h1 Class 1
+          %h3 LIS 654 - 03, Spring 2013
+          %h4 
+            Izzy Johnston
+            %br
+            %a{:href => 'mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]', :target =>'blank'}
+              izzycjohnston@gmail.com
+        /Introduction
+        %section
+          %h2 Introductions
+          %p Tell us about yourself
+          %ul
+            %li Your level in the program
+            %li Your previous experience with technology
+            %li What you want to be when you grow up
+            %li Your favorite animal
+        %section
+          %section
+            %h2 Course Sections
+            %p Web Standards
+            %ul.web-standards
+              %li
+                HTML
+              %li
+                CSS
+              %li
+                JavaScript
+              %li
+                Accessibility
+              %li
+                Social Media
+          %section
+            %h2 Course Sections
+            %p Databases and Digital Libraries
+            %ul.web-standards
+              %li
+                Database 
+                %br
+                Structures
+              %li
+                Digital
+                %br
+                Access
+              %li
+                Data
+                %br
+                Retrieval
+              %li
+                Content Management Systems &nbsp; &nbsp;       
+          %section
+            %h2 Course Sections
+            %p Data Structures and Open Data
+            %ul.web-standards
+              %li
+                APIs
+              %li
+                Open Data
+              %li
+                Microdata
+              %li
+                Library and Archive Data Schema
+       
+        %section
+          %section
+            %h2 Assignments and Evaluation
+            %p Distributions of evaluation are as follows
+            %ul
+              %li.fragment
+                20% -- Homework assignments (4 total)
+              %li.fragment
+                5% -- Final Paper/Project Proposal
+              %li.fragment
+                35% -- Final Paper/Project
+              %li.fragment
+                10% -- Final Presentation
+              %li.fragment
+                30% -- Class Participation
+          %section
+            %h2 Final Paper/Project
+            %p In this course you will have an option of four separate final projects
+            %ol
+              %li.fragment
+                12-15 page Research Paper
+              %li.fragment
+                12-15 page Qualitative and Quantitative Analysis of social media interactions
+              %li.fragment
+                12-15 page Analysis of HTML5 and Microdata schema
+              %li.fragment
+                A multi-page website that incorporates database structure and search functionality.
+         
+        / What is HTML
+        %section
+          %section
+            %h3 What is HTML?
+            %p HTML is the code that allows us to build websites
+            %img{:src => "images/homepage-view.png"}
+        
+          %section
+            %h3 What is HTML?
+            %p If you 'view the source', you see this
+            %img{:src => "images/homepage-html.png"}
+        
+        / History of HTML
+        %section
+          %section
+            %h3 History of HTML
+            %ul
+              %li.fragment Invented by Tim Berners-Lee
+              %li.fragment Created "hypertext" to share scientific papers
+              %li.fragment First web page August 6, 1991
+              %li.fragment Standardized by w3 Consortium (pack of super nerds)
+          %section
+            %h3 History of HTML
+            %ul
+              %li.fragment
+                %span.yellow> H
+                yper 
+                %span.yellow> T
+                ext  
+                %span.yellow> M
+                arkup 
+                %span.yellow> L
+                anguage 
+              %li.fragment Early 90s
+              %li.fragment HTML 4 in 1997
+              %li.fragment XHTML in 2000
+              %li.fragment HTML 5 in 2008
+          
+        / Terms
+        %section
+          %h3 Terms
+          %ul
+            %li
+              .blue Web design
+              %div The process of planning, structuring and creating a website
+            %li
+              .blue Web development
+              %div The process of programming dynamic web applications
+            %li
+              .blue Front end
+              %div The outwardly visible elements of a website or application
+            %li
+              .blue Back end
+              %div The inner workings and functionality of a website or application.
+          
+        / Nitty gritty 1 - Clients and servers
+        %section
+          %h3 Clients and servers
+          %p How your computer accesses websites
+          %img{:src => "images/client-server.png"}/
+          
+        / Nitty gritty 2 - Tools
+        %section
+          %h3 Tools
+          %ul
+            %li
+              .yellow Browser
+              %div Chrome
+              %div Firefox
+            %li
+              .yellow Development Toolkit
+              %div Chrome - Inspector
+              %div Firefox - Firebug
+            %li
+              .yellow Text Editor
+              %div TextWrangler - Mac
+              %div Notepad ++ - Windows
+              %div Sublime Text - Mac or Windows
+          
+        / Roles of HTML v CSS
+        %section
+          %section
+            %h3 Anatomy of a website
+            .blue Your Content
+            %div
+              %span.blue> + HTML:
+              Structure
+            %div
+              %span.blue> + CSS:
+              Presentation
+            .blue = Your Website
+          
+          %section
+            %h3 Anatomy of a website
+            .yellow Concrete example
+            %ul
+              %li.fragment
+                %p A paragraph is your content
+              %li.fragment
+                %div{:style => "font-size: 80%"} Putting your content into an HTML tag to make it look like a paragraph is Structure
+                %pre
+                  %code.html
+                    :preserve
+                      &lt;p>A paragraph is your content&lt;/p>
+              %li.fragment
+                %div{:style => "font-size: 80%"} Make the font of your paragraph blue and 18pt is presentation
+                %p.blue A paragraph is your content
+          
+        / HTML element
+        %section
+          %section
+            %h3 Anatomy of an HTML element
+            %ul
+              %li.fragment
+                Element
+                %ul
+                  %li An individual component of HTML
+                  %li Paragraph, Table, List
+              %li.fragment
+                Tag
+                %ul
+                  %li
+                    Markers that signal the beginning and
+                    end of an element
+                  %li
+                    Opening tag and Closing Tag
+                    %pre
+                      %code.html
+                        :preserve
+                          &lt;tagname>Stuff in the middle&lt;/tagname>
+                  %li
+                    %pre
+                      %code.html
+                        :preserve
+                          &lt;p> This is a sample paragraph.&lt;/p>
+          %section
+            %h3 Anatomy of an HTML element
+            %ul
+              %li.fragment
+                Container Element
+                %ul
+                  %li
+                    An element that can contain other elements or
+                    content
+                  %li A paragraph (&lt;p>) contains text
+              %li.fragment
+                Stand Alone Element
+                %ul
+                  %li An element that cannot contain anything else
+                  %li
+                    %pre
+                      %code.html
+                        :preserve
+                          &lt;br/><br/>&lt;img/> 
+          %section
+            %h3 Anatomy of an HTML element
+            %ul
+              %li.fragment
+                Attribute
+                %ul
+                  %li Each element can have a variety of attributes
+                  %li Language, style, identity, source
+              %li.fragment
+                Value
+                %ul
+                  %li
+                    Value is the value assigned to a given
+                    attribute.
+                  %li
+                    %pre
+                      %code.html
+                        :preserve
+                          &lt;p lang = "fr">C'est la vie&lt;/p>
+                          &lt;img src = "my.picture.jpg"/> 
+          
+        / HTML Page
+        %section
+          %h3 Doctype
+          %p The first thing on an HTML page is the doctype, which tells the browser which version of the markup language the page is using.
+          %pre
+            %code.html{:contenteditable => true}
+              :preserve
+                <br/>
+                &lt;!DOCTYPE HTML>
+                <br/>
+        / HTML Tag
+        %section
+          %h3 HTML Tag
+          %p
+            After &lt;doctype>, the page content must be
+            contained between &lt;html> tags.
+          %pre
+            %code.html
+              :preserve
+                &lt;!DOCTYPE html>
+                  &lt;html>
+                  
+                  &lt;/html>
+        
+        / Head and Body
+        %section
+          %section
+            %h3 Head and Body Tags
+            .left-align
+              %p.fragment The head contains meta information about the page.
+              %p.fragment The body contains the actual content of the page.
+          %section
+            %h3 Head and Body Tags
+            %pre
+              %code.html
+                :preserve
+                  &lt;!DOCTYPE html>
+                  &lt;html>
+                     &lt;head>
+                      &lt;title>Title of the page &lt;/title>
+                     &lt;/head>
+                     &lt;body>
+                      The page content here.
+                     &lt;/body>
+                  &lt;/html>
+        / Nesting
+        %section
+          %h3 Nesting
+          %p All elements "nest" inside one another
+          %img{:src => "images/owls.jpg"}/
+          %p Whichever element OPENS first CLOSES last
+          
+        / Elements
+        / Paragraphs
+        %section
+          %h3 Paragraphs
+          %div
+            .left{:style => "width:50%"}
+              %pre
+                %code.html
+                  :preserve
+                    &lt;p>Paragraph 1&lt;/p>
+                    &lt;p>Paragraph 2&lt;/p>
+                    &lt;p>Paragraph 3&lt;/p>
+              %pre
+                %code.html
+                  :preserve
+                     &lt;p>Paragraph 1&lt;/p> &lt;p>Paragraph 2&lt;/p>  &lt;p>Paragraph 3&lt;/p>
+              %pre
+                %code.html
+                  :preserve
+                    &lt;p>Paragraph 1&lt;/p> 
+
+
+                    &lt;p>Paragraph 2&lt;/p>  
+                    &lt;p>Paragraph 3&lt;/p>
+            %div
+              %p Paragraph 1
+              %p Paragraph 2
+              %p Paragraph 3
+            .clear
+            %p * White space is only for humans!
+          
+        / Headings
+        %section
+          %h3 Headings
+          %div
+            .left{:style => "width:50%"}
+              %pre
+                %code.html
+                  :preserve
+                    &lt;h1>Heading 1&lt;/h1>
+                    &lt;h2>Heading 2&lt;/h2>
+                    &lt;h3>Heading 3&lt;/h3>
+                    &lt;h4>Heading 4&lt;/h4>
+                    &lt;h5>Heading 5&lt;/h5>
+                    &lt;h6>Heading 6&lt;/h6>
+            .left{:style => "width:50%"}
+              %h1{:style => "font-size: 120%"} Heading 1
+              %h2{:style => "font-size: 110%"} Heading 2
+              %h3{:style => "font-size: 105%"} Heading 3
+              %h4{:style => "font-size: 95%"} Heading 4
+              %h5{:style => "font-size: 85%"} Heading 5
+              %h6{:style => "font-size: 75%"} Heading 6
+            .clear
+            %p * Heading number indicates hierarchy, not size. Think: Outlines from high school papers
+          
+        / Lists
+        %section
+          %h3 Lists
+          %div
+            .left{:style => "width:50%"}
+              %pre
+                %code.html
+                  :preserve
+                    &lt;ul>
+                      &lt;li>List Item&lt;/li>
+                      &lt;li>AnotherList Item&lt;/li>
+                    &lt;/ul>
+              %pre
+                %code.html
+                  :preserve
+                    &lt;ol>
+                      &lt;li>List Item&lt;/li>
+                      &lt;li>AnotherList Item&lt;/li>
+                    &lt;/ol>
+            .left{:style => "width:50%"}
+              %p
+                Unordered list (bullets)
+                %ul
+                  %li List Item
+                  %li AnotherList Item
+                %br/
+                %br/
+                %p
+                  Ordered list (sequence)
+                  %ol
+                    %li List Item
+                    %li AnotherList Item
+            .clear
+          
+        / Line Break
+        %section
+          %h3 Line Breaks
+          %div
+            .left{:style => "width:50%"}
+              %pre
+                %code.html
+                  :preserve
+                    &lt;p>
+                      Imagine there's no Heaven &lt;br/>
+                      It's easy if you try &lt;br/>
+                      No hell below us  &lt;br/>
+                      Above us only sky
+                    &lt;/p>
+            .left.left-align{:style => "width:50%"}
+              %p
+                Imagine there's no Heaven
+                %br/
+                It's easy if you try
+                %br/
+                No hell below us
+                %br/
+                Above us only sky
+            .clear
+            %br/
+            %br/
+            %p * Notice: This tag does is our first example of a stand-alone or "self-closing" element. A break can't contain anything.
+       
+        %section   
+          / Inline vs. block
+          %section
+            %h3 Inline vs Block
+            .left-align
+              .fragment
+                %p So far, we have mostly seen "block" elements
+                %p They appear on the next line, like paragraphs
+              %br/
+              %br/
+              .fragment
+                %p There are also "inline" elements
+                %p They appear on the same line that they are written on.
+          
+          / Em and Strong
+          %section
+            %h3 Formatted text
+            %div
+              .left{:style => "width:50%"}
+                %pre
+                  %code.html
+                    :preserve
+                      &lt;p>
+                        Here is a paragraph with &lt;em>Emphasized&lt;/em> text and &lt;strong>Important&lt;/strong> text.
+                      &lt;/p>
+              .left.left-align{:style => "width:50%"}
+                %p
+                  Here is a paragraph with
+                  %em Emphasized
+                  text and
+                  %strong Important
+                  text.
+              .clear
+              %br/
+              %br/
+              %p * Notice: em and strong are meant to indicate meaning through style. If you want to have italicized for appearance and not to communicate meaning, you should use CSS.
+          
+        / Exercise
+        %section
+          %h3 You're turn!
+          %p.blue We are going to start building a personal portfolio
+          %ul
+            %li Create a new file with your text editor.
+            %li Save it with the extension .html
+            %li Start the page with Doctype, Head, and Body
+            %li Write a paragraph about yourself
+            %li Add a list of your favorite things
+                      
+        %section
+          %h1 Questions?
+      %footer
+        .copyright
+          Class 1 -- January 13, 2013
+          %a{:rel => 'license', :href => 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US'}
+            %img{:alt => 'Creative Commons License', :src => 'http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png'}
+            
+      %script{:src=>'reveal/lib/js/head.min.js'}
+      %script{:src=> 'reveal/js/reveal.min.js'}
+      %script{:src=>'js/settings.js'}

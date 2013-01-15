@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class 1 -- LIS 654</title>
+    <meta content='Class 1 -- Introduction' name='description' />
+    <meta content='Izzy Johnston' name='author' />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style' />
+    <link href='reveal/css/reveal.css' rel='stylesheet' />
+    <link href='reveal/css/theme/default.css' id='theme' rel='stylesheet' />
+    <!-- For syntax highlighting -->
+    <!-- light editor<link rel="stylesheet" href="lib/css/light.css"> -->
+    <link href='reveal/lib/css/dark.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <!--[if lt IE 9]>
+      <script src='lib/js/html5shiv.js'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='reveal'>
+      <div class='slides'>
+        <!-- Header -->
+        <section>
+          <h1>Class 1</h1>
+          <h3>LIS 654 - 03, Spring 2013</h3>
+          <h4>
+            Izzy Johnston
+            <br />
+            <a href='mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]' target='blank'>
+              izzycjohnston@gmail.com
+            </a>
+          </h4>
+        </section>
+        <!-- Introduction -->
+        <section>
+          <h2>Introductions</h2>
+          <p>Tell us about yourself</p>
+          <ul>
+            <li>Your level in the program</li>
+            <li>Your previous experience with technology</li>
+            <li>What you want to be when you grow up</li>
+            <li>Your favorite animal</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Course Sections</h2>
+            <p>Web Standards</p>
+            <ul class='web-standards'>
+              <li>
+                HTML
+              </li>
+              <li>
+                CSS
+              </li>
+              <li>
+                JavaScript
+              </li>
+              <li>
+                Accessibility
+              </li>
+              <li>
+                Social Media
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Course Sections</h2>
+            <p>Databases and Digital Libraries</p>
+            <ul class='web-standards'>
+              <li>
+                Database
+                <br />
+                Structures
+              </li>
+              <li>
+                Digital
+                <br />
+                Access
+              </li>
+              <li>
+                Data
+                <br />
+                Retrieval
+              </li>
+              <li>
+                Content Management Systems &nbsp; &nbsp;
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Course Sections</h2>
+            <p>Data Structures and Open Data</p>
+            <ul class='web-standards'>
+              <li>
+                APIs
+              </li>
+              <li>
+                Open Data
+              </li>
+              <li>
+                Microdata
+              </li>
+              <li>
+                Library and Archive Data Schema
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Assignments and Evaluation</h2>
+            <p>Distributions of evaluation are as follows</p>
+            <ul>
+              <li class='fragment'>
+                20% -- Homework assignments (4 total)
+              </li>
+              <li class='fragment'>
+                5% -- Final Paper/Project Proposal
+              </li>
+              <li class='fragment'>
+                35% -- Final Paper/Project
+              </li>
+              <li class='fragment'>
+                10% -- Final Presentation
+              </li>
+              <li class='fragment'>
+                30% -- Class Participation
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Final Paper/Project</h2>
+            <p>In this course you will have an option of four separate final projects</p>
+            <ol>
+              <li class='fragment'>
+                12-15 page Research Paper
+              </li>
+              <li class='fragment'>
+                12-15 page Qualitative and Quantitative Analysis of social media interactions
+              </li>
+              <li class='fragment'>
+                12-15 page Analysis of HTML5 and Microdata schema
+              </li>
+              <li class='fragment'>
+                A multi-page website that incorporates database structure and search functionality.
+              </li>
+            </ol>
+          </section>
+        </section>
+        <!-- What is HTML -->
+        <section>
+          <section>
+            <h3>What is HTML?</h3>
+            <p>HTML is the code that allows us to build websites</p>
+            <img src='images/homepage-view.png' />
+          </section>
+          <section>
+            <h3>What is HTML?</h3>
+            <p>If you 'view the source', you see this</p>
+            <img src='images/homepage-html.png' />
+          </section>
+        </section>
+        <!-- History of HTML -->
+        <section>
+          <section>
+            <h3>History of HTML</h3>
+            <ul>
+              <li class='fragment'>Invented by Tim Berners-Lee</li>
+              <li class='fragment'>Created "hypertext" to share scientific papers</li>
+              <li class='fragment'>First web page August 6, 1991</li>
+              <li class='fragment'>Standardized by w3 Consortium (pack of super nerds)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>History of HTML</h3>
+            <ul>
+              <li class='fragment'><span class='yellow'>H</span>yper<span class='yellow'>T</span>ext<span class='yellow'>M</span>arkup<span class='yellow'>L</span>anguage
+              </li>
+              <li class='fragment'>Early 90s</li>
+              <li class='fragment'>HTML 4 in 1997</li>
+              <li class='fragment'>XHTML in 2000</li>
+              <li class='fragment'>HTML 5 in 2008</li>
+            </ul>
+          </section>
+        </section>
+        <!-- Terms -->
+        <section>
+          <h3>Terms</h3>
+          <ul>
+            <li>
+              <div class='blue'>Web design</div>
+              <div>The process of planning, structuring and creating a website</div>
+            </li>
+            <li>
+              <div class='blue'>Web development</div>
+              <div>The process of programming dynamic web applications</div>
+            </li>
+            <li>
+              <div class='blue'>Front end</div>
+              <div>The outwardly visible elements of a website or application</div>
+            </li>
+            <li>
+              <div class='blue'>Back end</div>
+              <div>The inner workings and functionality of a website or application.</div>
+            </li>
+          </ul>
+        </section>
+        <!-- Nitty gritty 1 - Clients and servers -->
+        <section>
+          <h3>Clients and servers</h3>
+          <p>How your computer accesses websites</p>
+          <img src='images/client-server.png' />
+        </section>
+        <!-- Nitty gritty 2 - Tools -->
+        <section>
+          <h3>Tools</h3>
+          <ul>
+            <li>
+              <div class='yellow'>Browser</div>
+              <div>Chrome</div>
+              <div>Firefox</div>
+            </li>
+            <li>
+              <div class='yellow'>Development Toolkit</div>
+              <div>Chrome - Inspector</div>
+              <div>Firefox - Firebug</div>
+            </li>
+            <li>
+              <div class='yellow'>Text Editor</div>
+              <div>TextWrangler - Mac</div>
+              <div>Notepad ++ - Windows</div>
+              <div>Sublime Text - Mac or Windows</div>
+            </li>
+          </ul>
+        </section>
+        <!-- Roles of HTML v CSS -->
+        <section>
+          <section>
+            <h3>Anatomy of a website</h3>
+            <div class='blue'>Your Content</div>
+            <div><span class='blue'>+ HTML:</span>Structure
+            </div>
+            <div><span class='blue'>+ CSS:</span>Presentation
+            </div>
+            <div class='blue'>= Your Website</div>
+          </section>
+          <section>
+            <h3>Anatomy of a website</h3>
+            <div class='yellow'>Concrete example</div>
+            <ul>
+              <li class='fragment'>
+                <p>A paragraph is your content</p>
+              </li>
+              <li class='fragment'>
+                <div style='font-size: 80%'>Putting your content into an HTML tag to make it look like a paragraph is Structure</div>
+                <pre><code class='html'>&lt;p>A paragraph is your content&lt;/p></code></pre>
+              </li>
+              <li class='fragment'>
+                <div style='font-size: 80%'>Make the font of your paragraph blue and 18pt is presentation</div>
+                <p class='blue'>A paragraph is your content</p>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <!-- HTML element -->
+        <section>
+          <section>
+            <h3>Anatomy of an HTML element</h3>
+            <ul>
+              <li class='fragment'>
+                Element
+                <ul>
+                  <li>An individual component of HTML</li>
+                  <li>Paragraph, Table, List</li>
+                </ul>
+              </li>
+              <li class='fragment'>
+                Tag
+                <ul>
+                  <li>
+                    Markers that signal the beginning and
+                    end of an element
+                  </li>
+                  <li>
+                    Opening tag and Closing Tag
+                    <pre><code class='html'>&lt;tagname>Stuff in the middle&lt;/tagname></code></pre>
+                  </li>
+                  <li>
+                    <pre><code class='html'>&lt;p> This is a sample paragraph.&lt;/p></code></pre>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Anatomy of an HTML element</h3>
+            <ul>
+              <li class='fragment'>
+                Container Element
+                <ul>
+                  <li>
+                    An element that can contain other elements or
+                    content
+                  </li>
+                  <li>A paragraph (&lt;p>) contains text</li>
+                </ul>
+              </li>
+              <li class='fragment'>
+                Stand Alone Element
+                <ul>
+                  <li>An element that cannot contain anything else</li>
+                  <li>
+                    <pre><code class='html'>&lt;br/><br/>&lt;img/></code></pre>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Anatomy of an HTML element</h3>
+            <ul>
+              <li class='fragment'>
+                Attribute
+                <ul>
+                  <li>Each element can have a variety of attributes</li>
+                  <li>Language, style, identity, source</li>
+                </ul>
+              </li>
+              <li class='fragment'>
+                Value
+                <ul>
+                  <li>
+                    Value is the value assigned to a given
+                    attribute.
+                  </li>
+                  <li>
+                    <pre><code class='html'>&lt;p lang = "fr">C'est la vie&lt;/p>&#x000A;&lt;img src = "my.picture.jpg"/> &#x000A;</code></pre>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <!-- HTML Page -->
+        <section>
+          <h3>Doctype</h3>
+          <p>The first thing on an HTML page is the doctype, which tells the browser which version of the markup language the page is using.</p>
+          <pre><code class='html' contenteditable='contenteditable'><br/>&#x000A;&lt;!DOCTYPE HTML>&#x000A;<br/></code></pre>
+        </section>
+        <!-- HTML Tag -->
+        <section>
+          <h3>HTML Tag</h3>
+          <p>
+            After &lt;doctype>, the page content must be
+            contained between &lt;html> tags.
+          </p>
+          <pre><code class='html'>&lt;!DOCTYPE html>&#x000A;  &lt;html>&#x000A;  &#x000A;  &lt;/html>&#x000A;</code></pre>
+        </section>
+        <!-- Head and Body -->
+        <section>
+          <section>
+            <h3>Head and Body Tags</h3>
+            <div class='left-align'>
+              <p class='fragment'>The head contains meta information about the page.</p>
+              <p class='fragment'>The body contains the actual content of the page.</p>
+            </div>
+          </section>
+          <section>
+            <h3>Head and Body Tags</h3>
+            <pre><code class='html'>&lt;!DOCTYPE html>&#x000A;&lt;html>&#x000A;   &lt;head>&#x000A;    &lt;title>Title of the page &lt;/title>&#x000A;   &lt;/head>&#x000A;   &lt;body>&#x000A;    The page content here.&#x000A;   &lt;/body>&#x000A;&lt;/html></code></pre>
+          </section>
+        </section>
+        <!-- Nesting -->
+        <section>
+          <h3>Nesting</h3>
+          <p>All elements "nest" inside one another</p>
+          <img src='images/owls.jpg' />
+          <p>Whichever element OPENS first CLOSES last</p>
+        </section>
+        <!-- Elements -->
+        <!-- Paragraphs -->
+        <section>
+          <h3>Paragraphs</h3>
+          <div>
+            <div class='left' style='width:50%'>
+              <pre><code class='html'>&lt;p>Paragraph 1&lt;/p>&#x000A;&lt;p>Paragraph 2&lt;/p>&#x000A;&lt;p>Paragraph 3&lt;/p></code></pre>
+              <pre><code class='html'> &lt;p>Paragraph 1&lt;/p> &lt;p>Paragraph 2&lt;/p>  &lt;p>Paragraph 3&lt;/p></code></pre>
+              <pre><code class='html'>&lt;p>Paragraph 1&lt;/p> &#x000A;&#x000A;&#x000A;&lt;p>Paragraph 2&lt;/p>  &#x000A;&lt;p>Paragraph 3&lt;/p></code></pre>
+            </div>
+            <div>
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+              <p>Paragraph 3</p>
+            </div>
+            <div class='clear'></div>
+            <p>* White space is only for humans!</p>
+          </div>
+        </section>
+        <!-- Headings -->
+        <section>
+          <h3>Headings</h3>
+          <div>
+            <div class='left' style='width:50%'>
+              <pre><code class='html'>&lt;h1>Heading 1&lt;/h1>&#x000A;&lt;h2>Heading 2&lt;/h2>&#x000A;&lt;h3>Heading 3&lt;/h3>&#x000A;&lt;h4>Heading 4&lt;/h4>&#x000A;&lt;h5>Heading 5&lt;/h5>&#x000A;&lt;h6>Heading 6&lt;/h6></code></pre>
+            </div>
+            <div class='left' style='width:50%'>
+              <h1 style='font-size: 120%'>Heading 1</h1>
+              <h2 style='font-size: 110%'>Heading 2</h2>
+              <h3 style='font-size: 105%'>Heading 3</h3>
+              <h4 style='font-size: 95%'>Heading 4</h4>
+              <h5 style='font-size: 85%'>Heading 5</h5>
+              <h6 style='font-size: 75%'>Heading 6</h6>
+            </div>
+            <div class='clear'></div>
+            <p>* Heading number indicates hierarchy, not size. Think: Outlines from high school papers</p>
+          </div>
+        </section>
+        <!-- Lists -->
+        <section>
+          <h3>Lists</h3>
+          <div>
+            <div class='left' style='width:50%'>
+              <pre><code class='html'>&lt;ul>&#x000A;  &lt;li>List Item&lt;/li>&#x000A;  &lt;li>AnotherList Item&lt;/li>&#x000A;&lt;/ul></code></pre>
+              <pre><code class='html'>&lt;ol>&#x000A;  &lt;li>List Item&lt;/li>&#x000A;  &lt;li>AnotherList Item&lt;/li>&#x000A;&lt;/ol></code></pre>
+            </div>
+            <div class='left' style='width:50%'>
+              <p>
+                Unordered list (bullets)
+                <ul>
+                  <li>List Item</li>
+                  <li>AnotherList Item</li>
+                </ul>
+                <br />
+                <br />
+                <p>
+                  Ordered list (sequence)
+                  <ol>
+                    <li>List Item</li>
+                    <li>AnotherList Item</li>
+                  </ol>
+                </p>
+              </p>
+            </div>
+            <div class='clear'></div>
+          </div>
+        </section>
+        <!-- Line Break -->
+        <section>
+          <h3>Line Breaks</h3>
+          <div>
+            <div class='left' style='width:50%'>
+              <pre><code class='html'>&lt;p>&#x000A;  Imagine there's no Heaven &lt;br/>&#x000A;  It's easy if you try &lt;br/>&#x000A;  No hell below us  &lt;br/>&#x000A;  Above us only sky&#x000A;&lt;/p></code></pre>
+            </div>
+            <div class='left left-align' style='width:50%'>
+              <p>
+                Imagine there's no Heaven
+                <br />
+                It's easy if you try
+                <br />
+                No hell below us
+                <br />
+                Above us only sky
+              </p>
+            </div>
+            <div class='clear'></div>
+            <br />
+            <br />
+            <p>* Notice: This tag does is our first example of a stand-alone or "self-closing" element. A break can't contain anything.</p>
+          </div>
+        </section>
+        <section>
+          <!-- Inline vs. block -->
+          <section>
+            <h3>Inline vs Block</h3>
+            <div class='left-align'>
+              <div class='fragment'>
+                <p>So far, we have mostly seen "block" elements</p>
+                <p>They appear on the next line, like paragraphs</p>
+              </div>
+              <br />
+              <br />
+              <div class='fragment'>
+                <p>There are also "inline" elements</p>
+                <p>They appear on the same line that they are written on.</p>
+              </div>
+            </div>
+          </section>
+          <!-- Em and Strong -->
+          <section>
+            <h3>Formatted text</h3>
+            <div>
+              <div class='left' style='width:50%'>
+                <pre><code class='html'>&lt;p>&#x000A;  Here is a paragraph with &lt;em>Emphasized&lt;/em> text and &lt;strong>Important&lt;/strong> text.&#x000A;&lt;/p></code></pre>
+              </div>
+              <div class='left left-align' style='width:50%'>
+                <p>
+                  Here is a paragraph with
+                  <em>Emphasized</em>
+                  text and
+                  <strong>Important</strong>
+                  text.
+                </p>
+              </div>
+              <div class='clear'></div>
+              <br />
+              <br />
+              <p>* Notice: em and strong are meant to indicate meaning through style. If you want to have italicized for appearance and not to communicate meaning, you should use CSS.</p>
+            </div>
+          </section>
+        </section>
+        <!-- Exercise -->
+        <section>
+          <h3>You're turn!</h3>
+          <p class='blue'>We are going to start building a personal portfolio</p>
+          <ul>
+            <li>Create a new file with your text editor.</li>
+            <li>Save it with the extension .html</li>
+            <li>Start the page with Doctype, Head, and Body</li>
+            <li>Write a paragraph about yourself</li>
+            <li>Add a list of your favorite things</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Questions?</h1>
+        </section>
+      </div>
+      <footer>
+        <div class='copyright'>
+          Class 1 -- January 13, 2013
+          <a href='http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US' rel='license'>
+            <img alt='Creative Commons License' src='http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png' />
+          </a>
+        </div>
+      </footer>
+      <script src='reveal/lib/js/head.min.js'></script>
+      <script src='reveal/js/reveal.min.js'></script>
+      <script src='js/settings.js'></script>
+    </div>
+  </body>
+</html>
