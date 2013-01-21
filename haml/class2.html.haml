@@ -1,0 +1,453 @@
+!!!
+%html
+  %head
+    %title Class 2 -- LIS 654
+    %meta{:name => "description", :content => "Class 2 -- HTML and CSS" } 
+    %meta{:name => "author", :content => "Izzy Johnston" } 
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes" } 
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}
+    
+    %link{:rel => "stylesheet", :href => "reveal/css/reveal.css"}
+    %link{:rel => "stylesheet", :href => "reveal/css/theme/default.css", :id => "theme"}
+    
+    /For syntax highlighting
+    /light editor<link rel="stylesheet" href="lib/css/light.css">
+    %link{:rel=>"stylesheet", :href=>"reveal/lib/css/dark.css"}
+    
+    %link{:rel=> 'stylesheet', :href => 'css/style.css'}
+    
+    /[if lt IE 9]
+      %script{:src=>'lib/js/html5shiv.js'}
+  %body
+    .reveal
+      .slides
+        /Header
+        %section
+          %h1 Class 2
+          %h3 LIS 654 - 03, Spring 2013
+          %h4 
+            Izzy Johnston
+            %br
+            %a{:href => 'mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]', :target =>'blank'}
+              izzycjohnston@gmail.com
+        / Links
+        %section
+          %section
+            %h3 Links
+            %p Links have three components
+            %ul
+              %li Tag: &lt;a>&lt;a/>
+              %li Href attribute: "http://www.pratt.edu"
+              %li Alt attribute: "Pratt Homepage"
+            %pre
+              %code
+                &lt;a href ="http://www.pratt.edu" alt = "Pratt Homepage">Pratt&lt;/a>
+            %p
+              %a{:alt => "Pratt Homepage", :href => "http://www.pratt.edu"} Pratt
+          %section
+            %h3 Links
+            %p.yellow Absolute Links
+            %p.fragment Absolute links point to the full url, e.g. "http://www.google.com"
+            %p.fragment They are used when pointing to a website outside your own
+          %section
+            %h3 Links
+            %p.yellow Relative Links
+            %p.fragment Relative links point to a partial url, e.g. "home.html"
+            %p.fragment They are used when pointing to a page within your own website
+            %pre.fragment
+              %code
+                &lt;a href ="page.html">Link to something in the same folder as me&lt;a>
+            %pre.fragment
+              %code
+                &lt;a href ="../page.html">Link to something in the folder above me&lt;a>
+            %pre.fragment
+              %code
+                &lt;a href ="folder/page.html">Link to something in the folder 'folder'&lt;a>
+        / Images
+        %section
+          %h3 Images
+          %p Images also have three components
+          %ul
+            %li Tag: <img/>
+            %li Src attribute: "http://gateway.pratt.edu/storage/125%20Logo_Final.jpg"
+            %li Alt attribute: "Pratt logo"
+          %pre
+            %code
+              &lt;img src ="http://gateway.pratt.edu/storage/125%20Logo_Final.jpg" alt = "Pratt Logo"/>
+          %img{:alt => "Pratt Logo", :src => "http://gateway.pratt.edu/storage/125%20Logo_Final.jpg"}/
+        / Exercise
+        %section
+          %h3 Your turn
+          %p
+            Add images and links to the portfolio you began last week.
+        %section
+          %h3 Tables
+          %div
+            .left{:style => "width:50%"}
+              %pre
+                %code
+                  &nbsp;&lt;table>
+                  &nbsp;&lt;tr> 
+                  &nbsp;&nbsp;&lt;th>Head&lt;/th>
+                  &nbsp;&nbsp;&lt;th>Head&lt;/th>
+                  &nbsp;&lt;/tr>
+                  &nbsp;&lt;tr> 
+                  &nbsp;&nbsp;&lt;td>Data&lt;/td>
+                  &nbsp;&nbsp;&lt;td>Data&lt;/td>
+                  &nbsp;&lt;/tr>
+                  &nbsp;&lt;/table>
+            .left.left-align{:style => "width:50%"}
+              %table{:style => "border: 1px solid"}
+                %tr
+                  %th{:style => "border: 1px solid"} Head
+                  %th{:style => "border: 1px solid"} Head
+                %tr
+                  %td{:style => "border: 1px solid"} Data
+                  %td{:style => "border: 1px solid"} Data
+            .clear
+        / Character codes
+        %section
+          %h3 Character codes
+          %p There are character codes for many different characters in many different languages
+          %ul
+            %li Delta: &delta;
+            %li Copyright symbol: &amp;copy; &copy;
+            %li Grave: &amp;grave; &grave;
+            %li An grave a: &amp;agrave; &agrave;
+          %div
+            %a{:href => "http://rabbit.eng.miami.edu/info/htmlchars.html"} Full list
+        / Exercise
+        %section
+          %h3 Your turn
+          %p
+            Add a table to your portfolio. Make sure that it is "semantic". Only use tables when the data you are displaying calls for it.
+      
+        / What is CSS
+        %section
+          %h3 CSS: What is it?
+          %p
+            CSS =
+            = succeed "ascading" do
+              %span.yellow C
+            = succeed "tyle" do
+              %span.yellow S
+            = succeed "heets" do
+              %span.yellow S
+          %p CSS is a "style sheet language" that lets you style the elements on your page.
+          %p CSS is works in conjunction with HTML, but is not HTML itself.
+        %section
+          %h3 CSS: What can it do?
+          %p All colored text, position, and size
+          %a{:href => 'http://www.pratt.edu', :target => '_blank'}See Pratt's website
+        %section
+          %h3 CSS: What does it look like?
+          %a{:href => 'http://www.pratt.edu/eedev/styles/homepage-screen.css', :target => '_blank'}See Pratt's Main CSS
+        %section
+          / The CSS Rule
+          %section
+            %h3 The CSS Rule
+            %pre
+              %code.html
+                :preserve
+                  selector {
+                    property: value;
+                  }
+            .left-align
+              %p A block of CSS code is a 'rule'.
+              %p The rule starts with a 'selector'.
+              %p It has sets of 'properties' and 'values'.
+              %p A property-value pair is a declaration.
+          / CSS Syntax
+          %section
+            %h3 CSS Syntax
+            .left-align
+              %p Declarations:  Property and value of style you plan use on HTML element.
+              %p Declarations end with a semicolon
+              %p Declaration groups are surrounded by curly brackets.
+            %pre
+              %code.html
+                :preserve
+                  selector {
+                    property: value;
+                    property: value;
+                    property: value;
+                  }
+        %section
+          / Selectors elements
+          %section
+            %h3 Selector: Element
+            %pre
+              %code.html
+                :preserve
+                  p {
+                    property: value;
+                  }
+            %p Selects all paragraph elements.
+            %pre
+              %code.html
+                :preserve
+                  img {
+                    property: value;
+                  }
+            %p Selects all image elements.
+          / Selectors ID
+          %section
+            %h3 Selector: ID
+            %pre
+              %code.html
+                :preserve
+
+                  #footer {
+                    property: value;
+                  }
+            %p Selects all elements with an id of "footer".
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;p id="footer">Copyright 2011&lt;/p>
+            %p The associated HTML.
+          / Selectors Class
+          %section
+            %h3 Selector: Class
+            %pre
+              %code.html
+                :preserve
+
+                  .warning {
+                    color: red;
+                  }
+            %p Selects all elements with a class of "warning".
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;p class="warning">Run away!&lt;/p>
+            %p The associated HTML.
+        / ID vs Class
+        %section
+          %h3 IDs vs. Classes
+          .left-align
+            %span.yellow ID
+            %p Should only apply to one element on a webpage. I.E. A webpage only has one footer.
+            %p The "#" is how you tell CSS "this is an id."
+          .left-align
+            %span.yellow Class
+            %p Lots of elements can have the same class. I.E. There can be many warning on one webpage.
+            %p The "." is how you tell CSS "this is a class name."
+        / Selector position
+        %section
+          %h3 Selector: Position
+          %pre
+            %code.html
+              :preserve
+                p em {
+                  color: yellow;
+                }
+          %p Selects all em elements that are within a paragraph
+          %pre
+            %code.html
+              :preserve
+                &lt;p>This is &lt;em>important.&lt;/em>&lt;/p>
+          %p The associated HTML.
+        / Multiple values
+        %section
+          %h3 Property Values
+          %p Each property can have one or more comma separated values.
+          %pre
+            %code.html
+              :preserve
+                p{
+                  color: white;
+                  background-color: red;
+                  font-family: Arial, sans-serif;
+                }
+        / Color
+        %section
+          %h3 Property: Color
+          %p The color property changes the color of the text.
+          %pre
+            %code.html
+              :preserve
+                p {
+                  color: red;
+                  color: #ff0000;
+                  color: rgb(255, 0, 0);
+                }
+          %p Color name
+          %p Hexadecimal value
+          %p RGB value
+        / Background color
+        %section
+          %h3 Property: Background-color
+          %p The background-color property changes the color of the background.
+          %pre
+            %code.html
+              :preserve
+                p {
+                  background-color: black;
+                  background-color: #000000;
+                  background-color: rgb(0,0,0);
+                }
+        / Font family
+        %section
+          %h3 Property: Font-family
+          %p The font-family property deﬁnes which font is used.
+          %pre
+            %code.html
+              :preserve
+                p {
+                  font-family: "Times New Roman";
+                  font-family: serif;
+                  font-family: "Arial", sans-serif;
+                }
+          %p Specific font name
+          %p Generic name
+          %p Comma-separated list
+        / Font size
+        %section
+          %h3 Property: Font-size
+          %p The font-size property speciﬁes the size of the font.
+          %pre
+            %code.html
+              :preserve
+                p {
+                  font-size: 12px;
+                  font-size: 1.5em;
+                  font-size: 100%;
+                }
+          %p Pixels
+          %p "em"
+          %p Percentage
+        / Fonts
+        %section
+          %h3 Property: Fonts (shorthand)
+          %pre
+            %code.html
+              :preserve
+                p {
+                  font-style: italic;
+                  font-weight: bold;
+                  font-size: 10px;
+                  font-family: sans-serif;
+                }
+          OR
+          %pre
+            %code.html
+              :preserve
+                p {
+                  font: italic bold 10px sans-serif;
+                }
+        %section
+          / Connecting HTML to CSS
+          %section
+            %h3 Connecting CSS to HTML
+            %p.green 3 ways
+            %p "Inline"
+            %p "Embedded"
+            %p "External"
+          / Inline
+          %section
+            %h3 Connecting CSS to HTML: Inline
+            %pre
+              %code.html
+                :preserve
+                    &lt;p style="color:red">Some text.&lt;/p>
+            %p Uses the HTML attribute style.
+            %p Difficult to use in large projects
+            %p Not preferred.
+          / Embedded
+          %section
+            %h3 Connecting CSS to HTML: Embedded
+            %pre
+              %code.html
+                :preserve
+                  &lt;head>
+                    &lt;style type="text/css">
+                      p {
+                        color: blue;
+                        font-size: 12px;
+                      }
+                    &lt;/style>
+                  &lt;/head>
+            %p Inside &lt;head> element.
+            %p Uses &lt;style> tag.
+            %p Can only be used in one html file
+          / External
+          %section
+            %h3 Connecting CSS to HTML: Linked
+            %pre
+              %code.html
+                :preserve
+                  &lt;head>
+                    &lt;link rel="stylesheet" type="text/css" href="style.css">
+                  &lt;/head>
+            %p Shared resource for several pages.
+            %p Reduced ﬁle size & bandwidth
+            %p Easy to maintain in larger projects.
+            %p Preferred by nerds everywhere!
+        / Exercise
+        %section
+          %h3 Your turn
+          %ul
+            %li Create a new .css file
+            %li Add a link to the file in the head of the portfolio made last time
+            %li Add styles to change the colors, background colors or fonts of different parts of
+            %li Try using ids and classes to change specific elements
+        / Cascading
+        %section
+          %h3 Cascading
+          %p Styles "cascade" down until changed
+          %pre
+            %code.html
+              :preserve
+
+                p{
+                  color:blue;
+                  font-family: 'Helvetica';
+                }
+                .red{
+                  color:red;
+                }
+                #special{
+                  font-family: Arial;
+                }
+          %pre
+            %code.html
+              :preserve
+
+                  &lt;p>Paragraph&lt;/p>
+                  &lt;p class ="green">Paragraph&lt;/p>
+                  &lt;p class ="red">Paragraph&lt;/p>
+                  &lt;p class ="red" id ="special">Paragraph&lt;/p>
+        / Properties
+        %section
+          %h3 CSS Properties
+          %p Many CSS properties have self-explanatory names:
+          %ul
+            %li background-color
+            %li font-family
+            %li font-size
+            %li color
+            %li width
+            %li height
+          %p
+            %a{:href => "https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference"} Comprehensive list of all CSS properties
+        / Exercise
+        %section
+          %h3 Your turn
+          %ul
+            %li Create another page for your portfolio
+            %li Link the stylesheet you created before to this page
+            %li Play with new styles like background color, font, height, width, etc. on both html pages
+        %section
+          %h1 Questions?
+      %footer
+        .copyright
+          Class 2 -- January 22, 2013
+          %a{:rel => 'license', :href => 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US'}
+            %img{:alt => 'Creative Commons License', :src => 'http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png'}
+
+      %script{:src=>'reveal/lib/js/head.min.js'}
+      %script{:src=> 'reveal/js/reveal.min.js'}
+      %script{:src=>'js/settings.js'}
