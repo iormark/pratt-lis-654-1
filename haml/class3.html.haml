@@ -1,0 +1,509 @@
+!!!
+%html
+  %head
+    %title Class 3 -- LIS 654
+    %meta{:name => "description", :content => "Class 3 -- HTML and CSS" } 
+    %meta{:name => "author", :content => "Izzy Johnston" } 
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes" } 
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}
+    
+    %link{:rel => "stylesheet", :href => "reveal/css/reveal.css"}
+    %link{:rel => "stylesheet", :href => "reveal/css/theme/default.css", :id => "theme"}
+    
+    /For syntax highlighting
+    /light editor<link rel="stylesheet" href="lib/css/light.css">
+    %link{:rel=>"stylesheet", :href=>"reveal/lib/css/dark.css"}
+    
+    %link{:rel=> 'stylesheet', :href => 'css/style.css'}
+    
+    /[if lt IE 9]
+      %script{:src=>'lib/js/html5shiv.js'}
+  %body
+    .reveal
+      .slides
+        /Header
+        %section
+          %h1 Class 3
+          %h3 LIS 654 - 03, Spring 2013
+          %h4 
+            Izzy Johnston
+            %br
+            %a{:href => 'mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]', :target =>'blank'}
+              izzycjohnston@gmail.com
+        / Inline v block again
+        %section
+          %h3 Block &amp; Inline Elements, review
+          %ul
+            %li CSS divides HTML into two types:inline and block.
+            %li After block elements, browsers render a new line.
+            %li Inline elements: img, a, br, em, strong
+            %li Block elements: p, h1, ul, li, almost everything else
+        / Div and Span
+        %section
+          %h3 Div and Span
+          %p Two new HTML elements!
+          .left-align
+            %p Style multiple elements the same way by grouping them together.
+            %p &lt;span> creates an inline element.
+            %p &lt;div> creates a block element.
+        / Div continued
+        %section
+          %section
+            %h3 Grouping elements with div
+            .left-align
+              %p.fragment The div tag is a great way to apply styles to a bunch of  elements all at once.
+              %p.fragment The div tag is used everywhere to group elements together into sections.
+              %p.fragment For example, what if we want the first 2 paragraphs to be right-aligned, but we don't want any other paragraphs to be right-aligned?
+          %section
+            %h3 Grouping elements with div, cont.
+            %pre
+              %code.html
+                :preserve
+
+                  .align-right{
+                    text-align:right;
+                  }
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;div class ="align-right">
+                    &lt;a href ="http://twitter.com/girldevelopit">Twitter!&lt;/a> |
+                    &lt;a href ="http://facebook.com/girldevelopit">Facebook!&lt;/a>
+                  &lt;/div>
+                  &lt;a href ="http://pratt.edu" alt="Pratt's Homepage">Website!&lt;/a> | 
+                  &lt;a href ="http://silssa.prattsils.org" alt="Pratt SILS Blog">Blog!&lt;/a>
+            %div{:style => "text-align:right;"}
+              %a{:href => "http://twitter.com/girldevelopit"} Twitter!
+              |
+              %a{:href => "http://facebook.com/girldevelopit"} Facebook!
+            .left-align
+              %a{:href => "http://pratt.edu"} Website!
+              |
+              %a{:href => "http://silssa.prattsils.org"} Blog!
+        / Span
+        %section
+          %h3 Span
+          %p Span is used to apply a specific style inline
+          %pre
+            %code.html
+              :preserve
+
+                .yellow{
+                  color:yellow;
+                }
+          %pre
+            %code.html
+              :preserve
+
+                &lt;p>Paragraph with &lt;span class ="yellow">yellow&lt;/span> text.&lt;/p>
+          %p
+            Paragraph with
+            %span.yellow yellow
+            text.
+        / Pseudo class
+        %section
+          %section
+            %h3 Pseudo-classes, more CSS for links
+            .left.left-align{:style => "width:50%"}
+              %p Changing the format of a link when you hover over it is accomplished by using pseudo-classes.
+              %br/
+              %p CSS pseudo-classes are used to add special effects to some selectors.
+            Syntax:
+            %pre
+              %code.html
+                :preserve
+
+                  selector:pseudo-class
+                  {
+                    property:value;	
+                  }
+            Example:
+            %pre
+              %code.html
+                :preserve
+
+                  a:link
+                  {
+                    text-decoration: none;
+                  }
+          / Pseudo class
+          %section
+            %h3 Pseudo-classes, more CSS for links
+            %pre
+              %code.html
+                :preserve
+
+                    a:link	{color:#FF0000;} /* unvisited link */
+                    a:visited	{color:#00FF00;} /* visited link */
+                    a:hover	{color:#FF00FF;} /* mouse over link */
+                    a:active	{color:#0000FF;} /* selected link */
+            %p Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective!
+            %p Note: a:active MUST come after a:hover in the CSS definition in order to be effective!
+        / Exercise
+        %section
+          %h3 Your turn
+          %p Start dividing your existing html into divs and spans
+          %p Add pseudo classes to your links
+        
+        / Box model
+        %section
+          %h3 Box Model
+          %img{:src => "images/box-model.png"}/
+        / Padding
+        %section
+          %section
+            %h3 Padding
+            %p Space between the border and the content
+            %img{:src => "images/box-model.png"}/
+          %section
+            %h3 Padding
+            15 pixels on all sides
+            %pre
+              %code.html
+                :preserve
+
+                  padding: 15px;
+            10 pixels on top only
+            %pre
+              %code.html
+                :preserve
+
+                  padding-top: 10px;
+            10 on top, 5 on right, 3 on bottom, 5 on left
+            %pre
+              %code.html
+                :preserve
+
+                  padding: 10px 5px 3px 5px;
+          %section
+            %h3 Padding
+            %p
+              Four values
+              %p
+                %pre
+                  %code.html
+                    :preserve
+
+                        padding: top right bottom left;
+                %p Two values
+                %pre
+                  %code.html
+                    :preserve
+
+                        padding: top/bottom right/left;
+                %p One value
+                %pre
+                  %code.html
+                    :preserve
+
+                        padding: all;
+          %section
+            %h3 Padding
+            %pre
+              %code.html
+                :preserve
+
+                    padding: 10px 20px 30px 40px;
+            %img{:src => "images/padding.png"}/
+        / Border
+        %section
+          %section
+            %h3 Border
+            %p The edge around the box, specified as "thickness, style, color."
+            %img{:src => "images/box-model.png"}
+          %section
+            %h3 Border
+            %p A solid red border
+            %pre
+              %code.html
+                :preserve
+
+                    border: 1px solid #ff0000;
+            %p A thick dotted black top border
+            %pre
+              %code.html
+                :preserve
+
+                    border-top: 4px dotted #000000;
+            %p Two different border styles
+            %pre
+              %code.html
+                :preserve
+
+                    border-top: 1px solid #ff0000;
+                    border-bottom: 4px dotted #000000;
+          %section
+            %h3 Border - Other Properties
+            %pre
+              %code.html
+                :preserve
+
+                    border-width: 10px;
+                    border-style: dashed;
+                    border-color: #666666;
+            %p You can specify each property separately, or all three together.
+        / Margin
+        %section
+          %section
+            %h3 Margin
+            %p The transparent area around the box that separates it from other elements.
+            %img{:src => "images/box-model.png"}/
+          %section
+            %h3 Margin
+            %p 15 pixels on all sides
+            %pre
+              %code.html
+                :preserve
+
+                    margin: 15px;
+            %p 10 on top, 5 on right, 3 on bottom, 5 on left
+            %pre
+              %code.html
+                :preserve
+
+                    margin: 10px 5px 3px 5px;
+            %p 10 pixels on top
+            %pre
+              %code.html
+                :preserve
+
+                    margin-top: 10px;
+          %section
+            %h3 Auto Margin
+            %p If a margin is set to auto on a box that has width, it will take up as much space as possible.
+            %p CENTERED
+            %pre
+              %code.html
+                :preserve
+
+                    margin: auto;
+                    width: 300px;
+            %p FLUSH-RIGHT
+            %pre
+              %code.html
+                :preserve
+
+                    margin-left: auto;
+                    margin-right: 5px;
+                    width: 300px;
+        / Exercise
+        %section
+          %h3 Exercise
+          %p Try to center your portfolio using auto margin
+          %p Start adding padding, borders and margins to your divs to work more on styling
+        / Static Positioning
+        %section
+          %section
+            %h3 Static Positioning
+            .left-align
+              %p.fragment HTML elements are positioned static by default.
+              %p.fragment Static elements are positioned in the normal flow of the page
+              %p.fragment Static elements ignore top, bottom, right or left property specifications.
+          %section
+            %h3 Static Positioning
+            %p In normal flow, inline boxes flow from left to right, wrapping to next line when needed.
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;img src="pratt_logo.jpg"/>
+                  &lt;img src="pratt_logo.jpg"/>
+                  &lt;img src="pratt_logo.jpg"/>
+            %img{:src => "http://gateway.pratt.edu/storage/125%20Logo_Final.jpg", :style => "width:45%"}/
+            %img{:src => "http://gateway.pratt.edu/storage/125%20Logo_Final.jpg", :style => "width:45%"}/
+            %img{:src => "http://gateway.pratt.edu/storage/125%20Logo_Final.jpg", :style => "width:45%"}/
+          %section
+            %h3 Static Positioning
+            %p In normal flow, block boxes flow from top to bottom, making a new line after every box.
+            %pre
+              %code.html
+                :preserve
+
+                   &lt;p>Greetings&lt;/p>
+                   &lt;p>Hello&lt;/p>
+                   &lt;p>Hi there!&lt;/p>
+            .left-align
+              %p Greetings
+              %p Hello
+              %p Hi there!
+        / Relative Positioning
+        %section
+          %section
+            %h3 Relative Positioning
+            .left-align
+              %p.fragment Makes an element a "positioning context" in which to position other elements relative to it.
+              %p.fragment Relative positioning and absolute positioning are used together.
+              %p.fragment Use the properties top, bottom, right and left to relative position an element.
+          %section
+            %h3 Relative Positioning
+            %p The "relative" value will still put the element in the normal flow, but then offset it according to top/left/right/bottom properties.
+            %pre
+              %code.html
+                :preserve
+
+                    .relative{
+                      position: relative; 
+                      left: 80px; 
+                      top: 20px;
+                      height: 100px; 
+                      background-color: yellow;
+                    }
+            %div{:style => "position: relative; left: 80px; top: 20px;\n   height: 100px; background-color: yellow; color:black; text-align:left"}
+              Hello, hi!
+        / Absolute positioning
+        %section
+          %section
+            %h3 Absolute Positioning
+            .left-align
+              %p.fragment Determined by its offset values in the properties top, bottom, right and left.
+              %p.fragment An absolutely positioned element is offset from its container block, positioned relative.
+              %p.fragment Its container block is the first element that has a position other than static.
+              %p.fragment If no such element is found, the container block is &lt;html>.
+          %section
+            %p The "absolute" value will take the element out of the normal flow and position it in relation to the window (or the closest non-static element).
+            %pre
+              %code.html
+                :preserve
+
+                    .top{
+                      position: absolute; 
+                      top: 10px; 
+                      right: 10px; 
+                      background-color: yellow
+                    }
+            %pre
+              %code.html
+                :preserve
+
+                    .top{
+                      position: absolute; 
+                      bottom: 10px; 
+                      left:60px; 
+                      background-color: green
+                    }
+            %div{:style => "position: absolute; top: -40px; right: 10px; \n           background-color: yellow; color:black"}
+              Up here
+            %div{:style => "position: absolute; bottom: -40px; left:60px; \n         background-color: green"}
+              Down here
+        %section
+          %p The z-index property specifies the stack order of positioned elements, in the case that they are overlapping. The element with highest z-index goes on top.
+          %pre
+            %code.html
+              :preserve
+
+                  .bottom{
+                    position: absolute; 
+                    bottom: 10px; 
+                    left:60px; 
+                    background-color: yellow;
+                  }
+          %pre
+            %code.html
+              :preserve
+
+                  .top{
+                    position: absolute; 
+                    bottom: 15px; 
+                    left:60px; 
+                    background-color: green; 
+                    z-index: 2;
+                  }
+          %div{:style => "position: absolute; bottom: -20px; left:60px; \n          background-color: yellow; color:black"} Bottom
+          %div{:style => "position: absolute; bottom: -15px; left:60px; \n          background-color: green; z-index: 2; "} Top
+        / Float
+        %section
+          %section
+            %h3 Float
+            .left-align
+              %p.fragment An element can be pushed to the right or the left, allowing others to wrap around it.
+              %p.fragment Text and other content will flow around a floated element.
+              %p.fragment You can specify a) whether an element is floated or not, and b) which side it floats on.
+          %section
+            %h3 Float
+            %pre
+              %code.html
+                :preserve
+
+                    .float{
+                      float:left;
+                      width:50px;
+                      background:yellow;
+                    }
+            %div{:style => "float:left;width:50px;background:yellow; color:black"}
+              hi
+              %br/
+              hi
+              %br/
+              hi
+              %br/
+            .left-align Not floating element
+            .left-align Not floating element
+            .left-align Not floating element
+            .left-align Not floating element
+        / Clear
+        %section
+          %section
+            %h3 Clear
+            %p Specifies which side of an element floats are not allowed.
+            %p Clearing both sides makes sure floats don't flow past the clear element.
+            %pre
+              %code.html
+                :preserve
+
+                    clear: right;
+                    clear: left;
+                    clear: both;
+          %section
+            %h3 Clear
+            %pre
+              %code.html
+                :preserve
+
+                     .float{
+                       float:left;
+                       width:50px;
+                       background:yellow;
+                     }
+                     .clear{
+                       clear:both
+                     }
+            %div{:style => "float:left;width:50px;background:yellow; color:black"}
+              hi
+              %br/
+              hi
+              %br/
+              hi
+              %br/
+            .left-align Not floating element
+            .clear
+            .left-align Not floating element
+        / Exercise
+        %section
+          %h3 You're turn!
+          %p Add layout positioning!
+          %p Absolutely position an image to the top right
+          %p Add a header, two columns and a footer through floating
+          
+        %section
+          %h3 Homework
+          %p.yellow Due 6:30pm, Tuesday Feb 5
+          %ul
+            %li At least two pages of html
+            %li That share one css file
+            %li Demonstrated knowledge of html nesting and the html elements learned so far
+            %li Required: p, div, ul or li
+            %li Demonstrated knowledge of css learned so far
+            %li Required: color, size, box model, positioning
+          
+        %section
+          %h1 Questions?
+      %footer
+        .copyright
+          Class 2 -- January 29, 2013
+          %a{:rel => 'license', :href => 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US'}
+            %img{:alt => 'Creative Commons License', :src => 'http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png'}
+
+      %script{:src=>'reveal/lib/js/head.min.js'}
+      %script{:src=> 'reveal/js/reveal.min.js'}
+      %script{:src=>'js/settings.js'}
