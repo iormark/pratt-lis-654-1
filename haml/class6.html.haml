@@ -1,0 +1,1131 @@
+!!!
+%html
+  %head
+    %title Class 6 -- LIS 654
+    %meta{:name => "description", :content => "Class 3 -- HTML and CSS" } 
+    %meta{:name => "author", :content => "Izzy Johnston" } 
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes" } 
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent"}
+    
+    %link{:rel => "stylesheet", :href => "reveal/css/reveal.css"}
+    %link{:rel => "stylesheet", :href => "reveal/css/theme/default.css", :id => "theme"}
+    
+    /For syntax highlighting
+    /light editor<link rel="stylesheet" href="lib/css/light.css">
+    %link{:rel=>"stylesheet", :href=>"reveal/lib/css/dark.css"}
+    
+    %link{:rel=> 'stylesheet', :href => 'css/style.css'}
+    
+    /[if lt IE 9]
+      %script{:src=>'lib/js/html5shiv.js'}
+  %body
+    .reveal
+      .slides
+        /Header
+        %section
+          %h1 Class 6
+          %h3 LIS 654 - 03, Spring 2013
+          %h4 
+            Izzy Johnston
+            %br
+            %a{:href => 'mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]', :target =>'blank'}
+              izzycjohnston@gmail.com
+        / History
+        %section
+          %section
+            %h3 History of JavaScript
+            %ul
+              %li.fragment Developed by Brendan Eich of Netscape in 1995
+              %li.fragment Standardized in 1997
+              %li.fragment Java -- Actually JavaScript has nothing to do with the language Java. Java was just the cool kid in town at the time
+              %li.fragment Script -- Instructions that a computer can run one line at a time
+          / History
+          %section
+            %h3 History of JavaScript
+            %ul
+              %li.fragment "AJAX" -- a way to communicate to servers was created in 2005
+              %li.fragment jQuery -- a super-popular JavaScript Library 2006
+              %li.fragment Node.js -- a way for JavaScript to perform back end functions in 2010
+              %li.fragment 2012 -- spec for JavaScript "nearly" finished
+        / What does JavaScript do
+        %section
+          %h3 What does JavaScript do?
+          %ul
+            %li
+              %a{:href => "http://leandrovieira.com/projects/jquery/lightbox/", :target => "_blank"} Image Galleries and Lightboxes
+            %li
+              %a{:href => "https://www.google.com/doodles/30th-anniversary-of-pac-man", :target => "_blank"} Games and all sorts of Google Doodles
+            %li
+              %a{:href => "http://www.girldevelopit.com/materials", :target => "_blank"} Interactions, like show/hide and accordians
+            %li
+              %a{:href => "http://www.girldevelopit.com/classes", :target => "_blank"} Retrieving data from other websites (through APIs)
+            %li All sorts of awesomeness, including this slideshow!
+        / Statements
+        %section
+          %h3 Statements/Script
+          %div Each line in JavaScript is an instruction or a script
+          %div When the browser reads it, it "executes the script"
+          %div
+            Try it out on the console. Open Chrome or Firefox and play along
+          %pre
+            %code.javascript{:contenteditable => ""}
+              :preserve
+
+                            console.log('Hello');
+        / Variables
+        %section
+          %section
+            %h3 Variables
+            .fragment.left-align
+              %p Variables hold content
+              %p Words, numbers, true/false, basically any kind of content
+            .fragment
+              %p Declare a variable (Give it a name)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var bananas;
+            .fragment
+              %p Initialize variable (Give it a value)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  bananas = 5;
+          %section
+            %h3 Variables
+            .fragment
+              %p Declare and initialize at the same time!
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var bananas = 5;
+            .fragment
+              %p Change value of variable
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  bananas = 4;
+              %p (I ate a banana)
+        / Data Types
+        %section
+          %section
+            %h3 Data types
+            .fragment
+              %p string -- a group of characters in quotes
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var fruit = "banana";
+            .fragment
+              %p number -- (well, a number)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var pi = 3.14;
+                                  var year = 2012;
+            .fragment
+              %p boolean -- yes or no
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var skyIsBlue = true;
+                                  var grassIsPink = false;
+          / Data Types
+          %section
+            %h3 Data types
+            .fragment
+              %p undefined -- no value yet
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var favoriteDinosaur;
+            .fragment
+              %p null -- a purposely empty value (not the same as 0)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                  var myTigersName = null;
+            .fragment
+              In nerd speak, JavaScript variables are "loosely typed". You don't know the kind of value a variable will have until you assign it.
+        / Naming rules
+        %section
+          %h3 Naming rules
+          .fragment
+            %p Begin with a letter, _, or $
+            %p Contain letters, numbers, _ and $
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                                var hello;
+                                var _hello;
+                                var $hello;
+                                var hello2;
+          .fragment
+            %p Names are case sensitive
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                                var hello;
+                                var Hello;
+                                var heLLO;
+        / Expressions
+        %section
+          %section
+            %h3 Expressions
+            .fragment
+              %p Math-y expressions!
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                              var bananas = 5;
+                              var oranges = 2;
+                              var fruit = bananas + oranges;
+            .fragment
+              %table
+                %tr
+                  %th Symbol
+                  %th Meaning
+                %tr
+                  %td +
+                  %td Addition
+                %tr
+                  %td -
+                  %td Subtraction
+                %tr
+                  %td *
+                  %td Multiplication
+                %tr
+                  %td /
+                  %td Division
+                %tr
+                  %td %
+                  %td Modulus
+                %tr
+                  %td ++
+                  %td Increment
+                %tr
+                  %td --
+                  %td Decrement
+          %section
+            %h3 Expressions
+            .fragment
+              %p Word-y expressions!
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                    var name = "Mitch";
+                    var dinosaur = "Stegosaurus";
+                    var sentence = "My dinosaur is a " + dinosaur + ". It's name is " + name + ".";
+        / Exercise
+        %section
+          %section
+            %h3 Your turn
+            %p Create a new html file in your previous homework
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;html>
+                    &lt;head>
+                      &lt;title>My Site!&lt;/title>
+                    &lt;/head>
+                    &lt;body>
+                      My site!
+                    &lt;/body>
+                  &lt;/html>
+          %section
+            %h3 Your turn
+            %p Create a new javascript file (a file that ends in .js)
+            %p Link it to your html file
+            %pre
+              %code.html
+                :preserve
+
+                  &lt;html>
+                    &lt;head>
+                      &lt;title>My Site!&lt;/title>
+                      &lt;script src="myjavascriptfile.js">&lt;/script>
+                    &lt;/head>
+                    &lt;body>
+                      My site!
+                    &lt;/body>
+                  &lt;/html>
+          %section
+            %h3 Let's Develop It
+            %p Life time supply calculator
+            %p Ever wonder how much a lifetime supply of your favorite snack or drink is?
+            %ul
+              %li Store your age in a variable
+              %li Store your maximum in a variable
+              %li Store an estimated amount per day in a variable
+              %li Calculate how many you would eat/drink for the rest of your life.
+              %li Output the result in an alert(see below) like so: "You will need NN to last you until your old age of NN"
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                            alert(answer);
+        
+        / If statement
+        %section
+          %section
+            %h3 The if statement
+            %p Javascript can run through code based on conditions
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                              if (condition here){
+                                // statement to execute
+                              }
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                              var bananas = 1;
+                              if (bananas < 2){
+                                console.log("You should buy more bananas!")
+                              }
+            .fragment
+              Note: you can write comments that only you, not the browser reads
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                // comment on one line
+                                /* comment on 
+                                  multiple lines
+                                  */
+          / Comparison
+          %section
+            %h3 Comparisons
+            %table
+              %tr.fragment
+                %td ===
+                %td Equality
+              %tr.fragment
+                %td !==
+                %td Inequality
+              %tr.fragment
+                %td >
+                %td Greater than
+              %tr.fragment
+                %td >==
+                %td Greater than or equal to
+              %tr.fragment
+                %td <
+                %td Less than
+              %tr.fragment
+                %td <==
+                %td Less than or equal to
+            %p.fragment.green
+              Don't confuse = (assign a value)
+              = succeed "with" do
+                %br/
+              \=== (compare a value)
+          / Logic
+          %section
+            %h3 Logic
+            %table
+              %tr.fragment
+                %td &&
+                %td AND
+              %tr.fragment
+                %td ||
+                %td OR
+              %tr.fragment
+                %td !
+                %td NOT
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                            var bananas = 5;
+                            var oranges = 2;
+                            if (bananas > 3 && oranges > 3){
+                              console.log('Eat fruit!');
+                            }
+                            if (bananas < 2 || oranges < 2){
+                              console.log('Buy fruit!');
+                            }
+                            if !(bananas >== 0){
+                              console.log('How do you have negative bananas?');
+                            }
+          / If/else
+          %section
+            %h3 If/Else Statement
+            %p You can use else to perform an alternative action if the "if" fails
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                            var bananas = 5;
+                            if (bananas > 3){
+                              console.log('Eat a banana!');
+                            } else {
+                              console.log('Buy a banana!');
+                            }
+          %section
+            %h3 If/Else Statement
+            %p You can use else if to have multiple choices
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                  var age = 20;
+                  if (age >= 35) {
+                    console.log('You can vote AND hold any place in government!');
+                  } else if (age >= 25) {
+                    console.log('You can vote AND run for the Senate!');
+                  } else if (age >= 18) {
+                    console.log('You can vote!');
+                  } else {
+                    console.log('You have no voice in government (yet)!');
+                  }
+        / Exercise
+        %section
+          %h3 Your turn
+          %p.left-align Add an if/else statement to our lifetime supply calculator so that if the lifetime supply is greater than 40,000, you say "Wow! That's a lot!" otherwise, say "You seem pretty reasonable!"
+        
+        / Functions
+        %section
+          %section
+            %h3 Functions
+            %p.fragment Functions are re-usable collections of statements
+            .fragment
+              Declare a function
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                function sayHi(){
+                                  console.log('Hi!');
+                                }
+            .fragment
+              Call the function
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                sayHi();
+          / Functions cont.
+          %section
+            %h3 Arguments
+            %p.fragment Functions can take named arguments
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                function sayHi(name){
+                                  console.log('Hi' + name + '!');
+                                }
+                                sayHi('Mitch, the dinosaur');
+                                sayHi('Harold, the hippo');
+
+                                var name = 'Pip, the mouse';
+                                sayHi(name);
+          / Functions cont.
+          %section
+            %h3 Arguments
+            %p.fragment Functions can take MULTIPLE named arguments
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                                function addNumbers(num1, num2){
+                                  var result = num1 + num2;
+                                  console.log(result);
+                                }
+
+                                addNumbers(5, 6);
+
+                                var number1 = 12;
+                                var number2 = 15;
+                                addNumbers(number1, number2);
+          / Functions cont.
+          %section
+            %h3 Return values
+            %p.fragment Functions can return a value
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                        function addNumbers(num1, num2){
+                          var result = num1 + num2;
+                          return result; //Anything after this line won't be read
+                        }
+                        var sum  = addNumbers(5, 6);
+          / Functions cont.
+          %section
+            %h3 Variable Scope
+            %p.fragment JavaScript have "function scope". They are visible in the function where they are defined
+            .fragment
+              A variable with "local" scope:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                      function addNumbers(num1, num2){
+                        var result = num1 + num2;
+                        return result; //Anything after this line won't be read
+                      }
+                      var sum  = addNumbers(5, 6);
+                      console.log(result); //will return undefined because result only exists inside the addNumbers function
+          / Functions cont.
+          %section
+            %h3 Variable Scope
+            %p.fragment JavaScript have "function scope". They are visible in the function where they are defined
+            .fragment
+              A variable with "global" scope:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                       var result;
+                        function addNumbers(num1, num2){
+                          result = num1 + num2;
+                          return result; //Anything after this line won't be read
+                        }
+                        var sum  = addNumbers(5, 6);
+                        console.log(result); //will return 11 because the variable was defined outside the function
+        / Exercise
+        %section
+          %h3 Your turn
+          %div
+            %p Wrap the lifetime supply calculator in a function called calculate()
+            %p Add a link to the html that calls the function when it is clicked
+            %pre
+              %code.html{:contenteditable => ""}
+                :preserve
+
+                   &lt;a href = "#" onclick="calculate()">
+                   Calculate life time supply
+                   &lt;/a>  
+                   
+        / Loops
+        %section
+          %section
+            %h3 Loops
+            %p Sometimes you want to go through a piece of code multiple times
+            %p.fragment Why?
+            %ul
+              %li.fragment Showing a timer count down
+              %li.fragment Displaying the results of a search
+              %li.fragment Adding images to a slideshow
+          %section
+            %h3 The while loop
+            %p The while loop tells JS to repeat statements until a condition is true:
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                       while (expression) {
+                         // statements to repeat
+                       }
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                       var x = 0;
+                       while (x < 5) {
+                         console.log(x);
+                         x++;
+                       }
+            .fragment
+              Review: '++' means increment by 1!
+            .fragment
+              .yellow Danger!!
+              %p What happens if we forget x++;?
+              %p The loop will never end!!
+          %section
+            %h3 The for loop
+            %p The for loop is a safer way of looping
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                           for (initialize; condition; update) {
+                             // statements to repeat
+                           }
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                           for (var i = 0; i < 5; i++) {
+                             console.log(i);
+                           }
+            .fragment
+              Less danger of an infinite loop. All conditions are at the top!
+         
+        / Arrays
+        %section 
+          %section
+            %h3 Array
+            %p An array is a data-type that holds an ordered list of values, of any type:
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             var arrayName = [element0, element1, ...];
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                    var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+                    var favoriteNumbers = [16, 27, 88];
+                    var luckyThings = ['Rainbows', 7, 'Horseshoes'];
+            .fragment
+              The length property reports the size of the array:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             console.log(rainbowColors.length);
+          %section
+            %h3 Arrays -- returning values
+            %p.fragment You can access items with "bracket notation".
+            .fragment
+              The number inside the brackets is called an "index"
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             var arrayItem = arrayName[indexNum];
+            .fragment
+              Nerds are weird, so we start counting at 0.
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                         var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+                         var firstColor = rainbowColors[0];
+                         var lastColor = rainbowColors[6];
+          %section
+            %h3 Arrays -- updating values
+            .fragment
+              You can also use bracket notation to change the item in an array:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                           var awesomeAnimals = ['Corgis', 'Otters', 'Octopi'];
+                           awesomeAnimals[0] = 'Bunnies';
+            .fragment
+              Or to add to an array:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             awesomeAnimals[4] = 'Corgis';
+            .fragment
+              You can also use the push method:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             awesomeAnimals.push('Ocelots');
+          %section
+            %h3 Loops and Arrays
+            Use a for loop to easily look at each item in an array:
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+                  for (var i = 0; i < rainbowColors.length; i++) {
+                    console.log(rainbowColors[i]);
+                    }
+        / Exercise
+        %section
+          %h3 Your turn
+          %ul
+            %li Add a new link to your html file
+            %li Add an onclick to the link for a function called favoriteThings()
+            %li Create a new function called favoriteThings() in the javascript file
+            %li In the function, create an array and loop through the results
+            %li Post the results in an alert "My favorite things are XX, YY, ZZ'
+            %li Bonus -- add an 'and' in the sentence before the last item
+         
+        / Objects
+        %section
+          %section
+            %h3 Objects
+            %p Objects are a data type that let us store a collection of properties and methods.
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                           var objectName = { 
+                             propertyName: propertyValue,
+                             propertyName: propertyValue,
+                             ...
+                           };
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                         var charlie = {
+                           age: 8,
+                           name: "Charlie Brown",
+                           likes: ["baseball", "The little red-haired girl"],
+                           pet: "Snoopy"
+                         };
+          %section
+            %h3 Objects -- returning values
+            %p Access values of "properties" using "dot notation":
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                         var charlie = {
+                           age: 8,
+                           name: "Charlie Brown",
+                           likes: ["baseball", "The little red-haired girl"],
+                           pet: "Snoopy"
+                         };
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             var pet = charlie.pet;
+          %section
+            %h3 Objects -- returning values
+            .fragment
+              Or using "bracket notation" (like arrays):
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             var name = charlie['name'];
+            .fragment
+              Non-existent properties will return undefined:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             var gender = charlie.gender
+          %section
+            %h3 Objects -- changing values
+            %p Use dot or bracket notation with the assignment operator to change objects.
+            .fragment
+              Change existing properties:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             charlie.name = "Chuck";
+            .fragment
+              Or add new properties:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             charlie.gender = "male";
+            .fragment
+              You can also delete properties:
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                             delete charlie.gender;
+        %section
+          %h3 Arrays of Objects
+          %p Arrays can hold objects too!
+          .fragment
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                             var peanuts = [
+                               {name: "Charlie Brown", 
+                                pet: "Snoopy"},
+                               {name: "Linus van Pelt",
+                                pet: "Blue Blanket"}
+                             ];
+          .fragment
+            That means we can use a for loop!
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                     for (var i = 0; i < peanuts.length; i++) {
+                       var peanut = peanuts[i];
+                       console.log(peanut.name + ' has a pet named ' + peanut.pet + '.');
+                     }
+        %section
+          %h3 Objects in functions
+          %p You can pass an object into a function as a parameter
+          %pre
+            %code.javascript{:contenteditable => ""}
+              :preserve
+
+                         var peanut ={
+                           name: "Charlie Brown", 
+                           pet: "Snoopy"
+                           };
+          .fragment
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                     function describeCharacter(character){
+                       console.log(character.name + ' has a pet named ' + character.pet + '.');
+                     }
+          .fragment
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                                 describeCharacter(peanut);
+        / Exercise
+        %section
+          %h3 Your turn
+          %ul
+            %li Add another link that calls the function myFriends() onclick
+            %li Add a new function to the javascript myFriends
+            %li In the function, create an array of friends objects, with their names and hair colors
+            %li Use a for loop to go through each friend and describe them
+            %li Alert the results
+            %li Bonus -- make a separate functions that describe the friends
+        / DOM
+        %section
+          %section
+            %h3 What's the DOM?
+            %ul
+              %li.fragment "Document Object Model"
+              %li.fragment A way to interact with the HTML elements on a webpage
+              %li.fragment Chrome and Firefox -- Right click --> Inspect Element
+          / What is a library
+          %section
+            %h3 What is a library?
+            %ul
+              %li.fragment Software libraries hold functions (not books!)
+              %li.fragment When you include a library, you can use all the functions in that library
+              %li.fragment
+                That means:
+                %span.pink you get to take advantage of other people's experience!
+              %li.fragment
+                And...
+                %span.blue Save time!
+        %section
+          / What is jQuery
+          %section
+            %h3 What is jQuery?
+            %p.fragment
+              jQuery is a
+              %span.green library
+              of JavaScript functions.
+            %p.fragment It contains many functions to help simplify your programming, including:
+            %ul
+              %li.fragment HTML element selection &amp; manipulation
+              %li.fragment CSS manipulation
+              %li.fragment HTML events
+              %li.fragment JavaScript effects and animations
+          %section
+            %h3 Why use jQuery?
+            %ul
+              %li.fragment The most popular JavaScript library
+              %li.fragment jQuery empowers you to "write less, do more."
+              %li.fragment
+                Great
+                %a{:href => "http://docs.jquery.com/", :target => "_blank"} documentation and tutorials
+              %li.fragment Used by nearly 20 million(!) websites
+          %section
+            %h3 jQuery: A Brief History
+            %ul
+              %li.fragment jQuery was created by John Resig, a JavaScript tool developer at Mozilla.
+              %li.fragment January 2006: John announced jQuery at BarCampNYC: BarCampNYC Wrap-up
+              %li.fragment September 2007: A new user interface library is added to jQuery: jQuery UI: Interactions and Widgets
+              %li.fragment September 2008: Microsoft and Nokia announce their support for jQuery
+              %li.fragment December 2009: jQuery wins .Net Magazine's Award for Best Open Source Application
+        / Including jquery
+        %section
+          %h3 Including jQuery
+          Two ways to include jQuery on your page:
+          .fragment
+            Download the library, store it locally:
+            %pre
+              %code.html{:contenteditable => ""}
+                :preserve
+
+                    &lt;head>
+                      &lt;script type="text/javascript" src="jquery.js">&lt;/script>
+                    &lt;/head>
+          .fragment
+            Include the the live library:
+            %pre
+              %code.html{:contenteditable => ""}
+                :preserve
+
+                    &lt;head>
+                      &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js">
+                      &lt;/script>
+                    &lt;/head>
+          .fragment
+            Note: live code can change! It's always best to download
+        / Selectors
+        %section
+          %h3 jQuery Selectors
+          %p.fragment jQuery selectors let you select HTML elements by:
+          %ul
+            %li.fragment
+              Element name (div, p)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                          var divs = $("div"); // All divs on page
+            %li.fragment
+              ID name (#mainpicture, #results)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                    var img = $("#mainpicture"); //img with id mainpicture
+            %li.fragment
+              Class name (.result, .picture)
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                    var images = $(".picture"); //All images with class picture 
+        / Actions
+        %section
+          %h3 jQuery Actions
+          .left-align
+            %p.fragment jQuery has hundreds of actions that can be performed on any element
+            %p.fragment All the actions are methods
+            %p.fragment As methods they are called with dot notation
+          .fragment
+            Action format
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                          $(selector).action();     
+        / Attributes and css
+        %section
+          %section
+            %h3 Updating attributes and css
+            .fragment
+              %pre
+                %code.html{:contenteditable => ""}
+                  :preserve
+
+                      &lt;img id="mainpicture" src="http://gateway.pratt.edu/storage/125%20Logo_Final.jpg">         
+            .fragment
+              Attribute get and set
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                      var img = $('#mainpicture');
+                      img.attr('src');
+                      img.attr('src', 'http://gateway.pratt.edu/storage/125%20Logo_Final.jpgg');
+            .fragment
+              CSS property get and set
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                      var img = $('#mainpicture');
+                      img.css('width');
+                      img.css('width', '200px');
+          / html values
+          %section
+            %h3 Updating values and html
+            .fragment
+              %pre
+                %code.html{:contenteditable => ""}
+                  :preserve
+
+                      &lt;div class ="results">Boo!&lt;/div>         
+            .fragment
+              Get and set html value
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                      var div = $('#results');
+                      div.html();
+                      div.html('New html!');
+          / Append and prepend
+          %section
+            %h3 Append and Prepend
+            .fragment
+              %pre
+                %code.html{:contenteditable => ""}
+                  :preserve
+
+                      &lt;div class ="results">Boo!&lt;/div>         
+            .fragment
+              Append html
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                        var div = $('#results');
+                        div.append('Additional html');
+            .fragment
+              Prepend html
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                        var div = $('#results');
+                        div.prepend('Additional html (on top)');
+        / Document Ready
+        %section
+          %h3 Document Ready
+          .left-align
+            %p Webpages take time to load
+            %p.fragment Almost always, you don't want the JavaScript to be called until the page is loaded
+          .fragment
+            Document ready is a method called when the page is loaded
+            %pre
+              %code.javascript{:contenteditable => ""}
+                :preserve
+
+                          $(document).ready(function(){
+
+                          });
+          .fragment.left-align
+            %span.yellow Note:
+            The function() inside is an "anonymous function". It has no name, but still performs like a function.
+        %section
+          %h3 Your turn
+          %ul
+            %li Update one of your functions
+            %li Instead of alerting the result, append the result to your page.
+            %li Make sure to have an element to get the results
+        / HTML forms
+        %section
+          %section
+            %h3 HTML forms
+            %p HTML Forms allow users to enter information
+            .fragment
+              %pre
+                %code.html{:contenteditable => ""}
+                  :preserve
+
+                    &lt;form id ="about-me">
+                      &lt;label for="your-name"> &lt;/label>
+                      &lt;input type ="text" id ="name" placeholder ="Enter a name" name="your-name"/>
+                      Do you like popcorn?
+                      &lt;label for="yes">Yes&lt;/label> 
+                      &lt;input type ="radio" name ="popcorn" val ="yes"/>
+                      &lt;label for="no">No&lt;/label> 
+                      &lt;input type ="radio" name ="popcorn" val ="no"/>
+                      &lt;label for="dinosaur">Favorite Dinosaur&lt;/label>
+                      &lt;select id ="dinosaur" name="dinosaur">
+                        &lt;option value ="t-rex">Tyrannosaurus Rex&lt;/option>
+                        &lt;option value ="tri">Triceratops&lt;/option>
+                        &lt;option value ="stego">Stegosaurus&lt;/option>
+                        &lt;option value ="other">Other&lt;/option>
+                      &lt;/select>
+                      &lt;input type ="submit" value ="Go!" style ="padding: 7px; font-size:1em"/>
+                    &lt;/form>
+          %section
+            %h3 HTML forms
+            %p HTML Forms allow users to enter information
+            .fragment.left-align
+              %form
+                %input#name{:placeholder => "Enter a name", :style => "width:300px; padding: 7px; font-size:1em", :type => "text"}/
+                %br/
+                %label Do you like popcorn
+                %br/
+                Yes
+                %input{:name => "popcorn", :style => "font-size:1em", :type => "radio", :val => "yes"}/
+                No
+                %input{:name => "popcorn", :style => "font-size:1em", :type => "radio", :val => "no"}/
+                %br/
+                %label Favorite Dinosaur
+                %br/
+                %select#dinosaur{:style => "padding: 7px; font-size:1em"}
+                  %option Tyrannosaurus Rex
+                  %option Triceratops
+                  %option Stegosaurus
+                  %option Other
+                %br/
+                %input{:style => "padding: 7px; font-size:1em", :type => "submit", :value => "Go!"}/
+          / JavaScript and HTML Forms
+          %section
+            %h3 Values from Forms
+            %p You can use JavaScript to get values from a form
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                        $('#name').val();
+                        $('select#dinosaur').val();
+                        $('input:radio[name=popcorn]:checked').val();
+            .fragment
+              Or set values of a form
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                        $('#name').val('Mitch');
+                        $('select#dinosaur').val('stego');
+                        $('input:radio[name=popcorn]:checked').val('no');
+          %section
+            %h3 Values from Forms
+            %p jQuery has an event for form submission
+            .fragment
+              %pre
+                %code.javascript{:contenteditable => ""}
+                  :preserve
+
+                          $('#about-me').submit(function(event){
+                                //code to execute after submission
+                                return false;
+                            });
+            %span.yellow "return false"
+            to prevent the form trying to submit to a server.
+        / Exercise
+        %section
+          %h3 Your turn
+          %ul
+            %li NOTE: This will be the homework you turn in
+            %li Create a form for people to contact you
+            %li Think of the work we did last week
+            %li What makes a form intuitive
+            %li Add elements like subject, body, topic, etc.
+            %li On submit, the result should append to the body of your page
+            %li If you want I can share how to actually send this in an email.
+        %section
+          %h1 Questions?
+      %footer
+        .copyright
+          Class 6 -- February 19, 2013
+          %a{:rel => 'license', :href => 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US'}
+            %img{:alt => 'Creative Commons License', :src => 'http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png'}
+
+      %script{:src=>'reveal/lib/js/head.min.js'}
+      %script{:src=> 'reveal/js/reveal.min.js'}
+      %script{:src=>'js/settings.js'}
