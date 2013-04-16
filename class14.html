@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class 6 -- LIS 654</title>
+    <meta content='Class 3 -- HTML and CSS' name='description' />
+    <meta content='Izzy Johnston' name='author' />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style' />
+    <link href='reveal/css/reveal.css' rel='stylesheet' />
+    <link href='reveal/css/theme/default.css' id='theme' rel='stylesheet' />
+    <!-- For syntax highlighting -->
+    <!-- light editor<link rel="stylesheet" href="lib/css/light.css"> -->
+    <link href='reveal/lib/css/dark.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <!--[if lt IE 9]>
+      <script src='lib/js/html5shiv.js'></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='reveal'>
+      <div class='slides'>
+        <!-- Header -->
+        <section>
+          <h1>Class 6</h1>
+          <h3>LIS 654 - 03, Spring 2013</h3>
+          <h4>
+            Izzy Johnston
+            <br />
+            <a href='mailto:izzycjohnston@gmail.com?subject=[LIS-654-03 Spring 2013]' target='blank'>
+              izzycjohnston@gmail.com
+            </a>
+          </h4>
+        </section>
+        <!-- Concepts-->
+        <section>
+          <section>
+            <h3>What is an API?</h3>
+            <ul>
+              <li class = "fragment"><span class = "yellow">A</span>pplication <span class = "yellow">P</span>rogramming <span class = "yellow">I</span>nterface</li>
+              <li class = "fragment">Data structure and rules for accessing a web-based appllication</li>
+              <li class = "fragment">How we can access information from sites that are not our own (Twitter, Meetup, Facebook, Foursquare)</li>
+            </ul>
+          </section>
+        
+          <section>
+            <h3>What is an API?</h3>
+            <ul>
+              <li class = "fragment">Primary role: a channel for applications to work together
+                <ul>
+                  <li class = "fragment">Your website and the Twitter API</li>
+                  <li class = "fragment">Twitter's mobile app and the Twitter API</li>
+                  <li class = "fragment">Hootsuite's mobile app and the Twitter API</li>
+              </li>
+            </ul>
+          </section>
+        
+          <!-- What is AJAX-->
+          <section>
+            <h3>What is AJAX?</h3>
+            <ul>
+              <li class = "fragment"><span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
+              <li class = "fragment">Method to communicate to a server or API</li>
+              <li class = "fragment">Asynchronous means:
+                <ul>
+                  <li class = "fragment">I ask Twitter for all the tweets ever!</li>
+                  <li class = "fragment">That will take a while</li>
+                  <li class = "fragment">My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
+                  <li class = "fragment">Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
+                </ul>
+              </li>
+              <li class = "fragment">Requests and results can be in JavaScript or XML</li>
+            </ul>
+          </section>
+        
+          <!-- What is REST-->
+          <section>
+            <h3>What is REST?</h3>
+            <ul>
+              <li class = "fragment"><span class = "yellow">Re</span>presentational <span class = "yellow">S</span>tate <span class = "yellow">T</span>ransfer</li>
+              <li class = "fragment">REST is a way to ask an API for information by using a URL.</li>
+              <li class = "fragment">REST Urls are created with the following syntax:
+                <ul>
+                  <li class = "fragment">http://ApiSite.com/method?parameter=value&amp;parameter=value</li>
+                  <li class = "fragment"><span class = "blue">Method</span> -- what you want from the API. Defined by API documentations</li>
+                  <li class = "fragment"><span class = "blue">Parameter</span> -- a type of filter or restraint. Defined by API documentations</li>
+                  <li class = "fragment"><span class = "blue">Value</span> -- value for parameter. Defined by you!</li>
+                </ul>
+              </li>
+            
+            </ul>
+          </section>
+        
+          <section>
+            <h3>Where do I learn about an API?</h3>
+            <p>All (good) APIs have documentation</p>
+            <ul>
+              <li>Facebook (<a href = "https://developers.facebook.com/" target = "_blank">https://developers.facebook.com/</a>)</li>
+              <li>Twitter (<a href = "https://dev.twitter.com/" target = "_blank">https://dev.twitter.com/</a>)</li>
+              <li>Meetup (<a href = "http://www.meetup.com/meetup_api/" target = "_blank">http://www.meetup.com/meetup_api/</a>)</li>
+              <li>FourSquare (<a href = "https://developer.foursquare.com/">https://developer.foursquare.com/</a>)</li>
+          </section>
+        
+          <!-- What is JSON-->
+          <section>
+            <h3>What is JSON?</h3>
+            <ul>
+              <li class = "fragment"><span class = "yellow">J</span>ava<span class = "yellow">S</span>cript <span class = "yellow">O</span>bject <span class = "yellow">N</span>otation</li>
+              <li class = "fragment">Format for data returned from APIs</li>
+              <li class = "fragment">You've seen it before!</li>
+              <li class = "fragment">JavaScript objects</li>
+            </ul>
+          </section>
+        </section>
+        <!-- Getting started!-->
+        <section>
+          <section>
+           <h3>Getting started!</h3>
+           <p>Get an API Key</p>
+           <p class = "fragment green">A what?</p>
+           <ul>
+             <li class = "fragment">Api Key or Developer Key is a way for an API to identify you</li>
+             <li class = "fragment">More secure for an API (Know who is using their API)</li>
+             <li class = "fragment">More secure for you -- people can't pretend to be your website</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Pearson</h3>
+            <p>We will be using the Pearson API</p>
+            <p><a href = "http://developer.pearson.com/user/register" target = "_blank">Setup</a></p>
+            <p><a href = "http://developer.pearson.com/apis" target = "_blank">APIS</a></p>
+          </section>
+          <section>
+            <h3>Pearson</h3>
+            <p>We will be finding interesting books published by Penguin</p>
+            <p><a href = "http://developer.pearson.com/api/penguin-classics-api/apimethod/get-article-1/189/overview" target = "_blank">Open Events</a></p>
+          </section>
+        </section>
+        
+        <!-- jQuery and Ajax-->
+        <section>
+          <!-- jQuery Ajax-->
+          <section>
+            <h3>jQuery Ajax</h3>
+            <p>jQuery method to perform an AJAX call</p>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+      $.ajax({
+    		url: 'http://site.com',
+    		data: {
+    		  parameter: 'value',
+    		  parameter: 'value'
+    		},
+    		crossDomain: true,
+    		dataType: 'jsonp',
+    		type: "GET",
+    		success: function (data) {
+    		    // code with data returned
+    		},
+    		error: function(data) {
+    			 // code with error returned
+    		}				
+    	});
+            	</code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>jQuery Ajax</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+      $.ajax({
+    		url: 'http://site.com',
+    		...			
+    	});
+            	</code></pre>
+            </div>
+            <ul>
+              <li class = "fragment"> $.ajax() -- jQuery method for sending AJAX requests</li>
+              <li class = "fragment">Takes one parameter -- a JavaScript object</li>
+              <li class = "fragment">Note the {}</li>
+              <li class = "fragment"><span class = "blue">url</span> -- first property, the url where you will send the AJAX request</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>jQuery Ajax</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+  	...
+  	data: {
+  	  parameter: 'value',
+  	  parameter: 'value'
+  	},
+  	...	
+            	</code></pre>
+            </div>
+            <ul>
+              <li class = "fragment"><span class = "blue">data</span> --  a JavaScript object with all the parameters for the AJAX request</li>
+              <li class = "fragment">Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
+                <ul>
+                  <li>key (refers to api key)</li>
+                  <li>city</li>
+                  <li>country</li>
+                  <li>topic</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>jQuery Ajax</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+  	...
+    crossDomain: true,
+  	dataType: 'jsonp',
+  	type: "GET",
+  	...	
+            	</code></pre>
+            </div>
+            <ul>
+              <li class = "fragment"><span class = "blue">crossDomain</span> -- are you sending the request to a domain that is not your own?</li>
+              <li class = "fragment"><span class = "blue">dataType</span> -- how will you evaluate the data returned</li>
+              <li class = "fragment"><span class = "blue">type</span> -- what type of request is it?
+                <ul>
+                  <li>GET -- retrieve data</li>
+                  <li>POST -- post new data</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+
+          <section>
+            <h3>jQuery Ajax</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+  	...
+    success: function (data) {
+  	    // code with data returned
+  	},
+  	error: function(data) {
+  		 // code with error returned
+  	}
+  	...	
+            	</code></pre>
+            </div>
+            <ul>
+              <li class = "fragment"><span class = "blue">success</span> -- code that will execute if results are sent back successfully</li>
+              <li class = "fragment"><span class = "blue">error</span> -- code that will execute if results return an error</li>
+            </ul>
+          </section>
+        </section>
+        
+        <section>
+          <h3>Your turn</h3>
+          <p>Create a form that can search the penguin api for titles or subjects that contain the words a user entered into the form</p>
+          <p>If you are building your own website for class, take this time to build the form a user would use to search your own API</p>
+        </section>
+        <section>
+          <h1>Questions?</h1>
+        </section>
+      </div>
+      <footer>
+        <div class='copyright'>
+          Class 6 -- February 19, 2013
+          <a href='http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US' rel='license'>
+            <img alt='Creative Commons License' src='http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png' />
+          </a>
+        </div>
+      </footer>
+      <script src='reveal/lib/js/head.min.js'></script>
+      <script src='reveal/js/reveal.min.js'></script>
+      <script src='js/settings.js'></script>
+    </div>
+  </body>
+</html>
